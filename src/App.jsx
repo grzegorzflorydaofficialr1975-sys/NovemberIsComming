@@ -3,9 +3,12 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import { Welcome } from './komponent.jsx'
+import { PrzywirajFedzahe } from './komponent.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [czy_fedz, setCzyFedz] = useState(false)
 
   return (
     <>
@@ -28,6 +31,18 @@ function App() {
         >
           Count is {count}
         </button>
+        <br/><br/><br/>
+        <h1> Czy jesteś Fedżem? </h1>
+        <button
+          type="button"
+          className="counter"
+          onClick={() => setCzyFedz((czy_fedz) => !czy_fedz)}
+        >
+          {czy_fedz ? "Tak" : "Nie"}
+        </button>
+
+        <PrzywirajFedzahe czy_fedz={czy_fedz} />
+
       </section>
 
       <div className="ticks"></div>
