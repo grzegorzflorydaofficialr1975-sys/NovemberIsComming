@@ -1,18 +1,29 @@
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-import { Welcome } from './komponent.jsx'
-import { PrzywirajFedzahe } from './komponent.jsx'
+// import heroImg from './assets/hero.png'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from './assets/vite.svg'
+// import './App.css'
+// import { Welcome } from './komponent.jsx'
+// import { PrzywirajFedzahe } from './komponent.jsx'
+// import Zadanie from './propsy.jsx'
+import { Article, PersonCard, MovieList } from './03r.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
   const [czy_fedz, setCzyFedz] = useState(false)
-
+  const movies = [
+        { id: 1, title: "Inception", year: 2010, rating: 8.8 },
+        { id: 2, title: "Avatar", year: 2009, rating: 8.5 }
+    ]
   return (
     <>
-      <section id="center">
+      <h1>Zad1</h1>
+      <Article title="React 18" author="Jan" content="React jest super!" />
+      <h1>Zad2</h1>
+      <PersonCard  firstName="Franciszek" lastName="Kliszko" age="17" />
+      <h1>Zad3</h1>
+      <MovieList movies={movies} />
+      {/* <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
@@ -42,6 +53,8 @@ function App() {
         </button>
 
         <PrzywirajFedzahe czy_fedz={czy_fedz} />
+
+        <Zadanie />
 
       </section>
 
@@ -129,7 +142,7 @@ function App() {
       </section>
 
       <div className="ticks"></div>
-      <section id="spacer"></section>
+      <section id="spacer"></section> */}
     </>
   )
 }
