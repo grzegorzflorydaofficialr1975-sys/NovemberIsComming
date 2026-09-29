@@ -4,6 +4,8 @@
 	// - author (string, wymagane)
 	// - content (string, opcjonalne)
 
+import { useState } from "react";
+
 	// Komponent powininen wyświetlić artykuł w formacie:
 	// <h2>Tytuł</h2>
 	// <p>Autor: imię autora</p>
@@ -63,7 +65,7 @@ export function MovieList(props) {
             {movies.map((element) => {
                 if (element.id && element.title && element.year && element.rating) {
                     return (
-                        <div key={element.id}>
+                        <div id={element.id}>
                             <p>{element.title}</p>
                             <p>rok: {element.year}</p>
                             <p>rating: {element.rating}</p>
@@ -75,3 +77,27 @@ export function MovieList(props) {
         </div>
     );
 }
+
+//  Zadanie praktyczne 4: Komponent z callback props
+// 	Utwórz komponent Counter z props:
+// 	- initialValue (number, opcjonalne, domyślnie 0)
+// 	- onIncrement (function, wymagane)
+// 	- onDecrement (function, wymagane)
+
+// 	Komponent wyświetli:
+// 	- Bieżącą wartość licznika
+// 	- Przycisk "Zwiększ" i "Zmniejsz" które wywołują callback'i
+
+// 	Waliduj że onIncrement i onDecrement to funkcje (PropTypes.func)
+
+export function Counter({ initialValue=0, onIncrement, onDecrement }){
+    const [counter, setCounter]  = useState(initialValue)
+    return (<>
+    <p>Licznik: {counter}</p>
+    <button onClick={()=>{setCounter(onDecrement(counter))}}>Zmniejsz</button>
+    <button onClick={()=>{setCounter(onIncrement(counter))}}>Zwiększ</button>
+    </>)
+    
+}
+
+
