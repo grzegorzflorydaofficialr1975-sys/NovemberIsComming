@@ -99,7 +99,7 @@ export function ListaObecnosci({ ListaUczniow }){
 */
 export function DziennikOcen({ Tablica }){
 	let przedmioty = ["Poliski", "Angielski", "Matematyka", "Programowanie"]
-	let [inpOcena, setInpOcena] = useState(Number)
+	let inpOcena = 0
 	let [listaWpisow, setListaWpisow] = useState(Tablica)
 	return(<>
 	<div>
@@ -110,8 +110,10 @@ export function DziennikOcen({ Tablica }){
 				</option>
 			))}
 		</select><br/>
-		Wsaw ocene: <input type="number" onChange={e=>{setInpOcena(e.target.value)}} />
-		<button >Wstaw ocene</button>
+		Wsaw ocene: <input type="number" onChange={e=>{inpOcena = e.target.value}} />
+		<button onClick={()=>{
+			// setListaWpisow(...listaWpisow, {})
+		}}>Wstaw ocene</button>
 
 	</div>
 	</>)
