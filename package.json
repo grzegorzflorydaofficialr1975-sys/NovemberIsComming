@@ -13,7 +13,8 @@
     "@babel/core": "^8.0.1",
     "@babel/preset-react": "^8.0.1",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-hook-form": "^7.91.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
